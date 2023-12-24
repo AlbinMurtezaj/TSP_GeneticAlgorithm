@@ -17,9 +17,9 @@ The project idea is that you give a number of cities and the distance between ea
   - API:
 
 ### Contributors
-- **Dion Kastrati**(https://github.com/Dion-Kastrati) <br>
-- **Albin Murtezaj**(https://github.com/AlbinMurtezaj) </br>
+- **[Dion-Kastrati]**(https://github.com/Dion-Kastrati) <br>
+- **[Albin Murtezaj]**(https://github.com/AlbinMurtezaj) </br>
 - **Marigona Hamiti**
-- **Leotrim Halimi**(https://github.com/leootrimi) </br>
+- **[Leotrim Halimi]**(https://github.com/leootrimi) </br>
 - **Endrit Abazi**
 - **Arbnore Qorraj**
