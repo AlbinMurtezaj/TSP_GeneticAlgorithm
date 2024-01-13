@@ -64,6 +64,28 @@
             newPopulation.push(newIndividual);
         }
 
+
+        
+        let population = [];
+        genInitialPopulation(population);
+        for (let i = 0; i <= numIterations; ++i) {
+            // fitness[i] <==> the ith route's total distance
+            let fitness = [];
+            population.forEach(individual => {
+                fitness.push(calcTotalDistance(waypoints, individual));
+            });
+            let sortedIndexes = [...Array(popSize).keys()]
+                .sort((index1, index2) => {
+                    return fitness[index1] < fitness[index2] ? -1 : 1;
+                });
+            let probabilities = new Array(popSize).fill(1.0 / popSize);
+            probabilities[sortedIndexes[0]] *= 6;
+            probabilities[sortedIndexes[1]] *= 6;
+            for (let j = 0; j < popSize / 2; ++j) {
+                probabilities[sortedIndexes[j]] *= 3;
+            }
+            normalize(probabilities);
+
        
   }
 </script>
