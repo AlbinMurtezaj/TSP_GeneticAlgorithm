@@ -32,6 +32,16 @@
                 population.push(zero.concat(individual));
             }
         }
+        // Calculate the Haversine distance between two waypoints
+        function getDistance(waypoint1, waypoint2) {
+            let dlon = waypoint2.lon - waypoint1.lon;
+            let lat1 = waypoint1.lat;
+            let lat2 = waypoint2.lat;
+            let dlat = lat2 - lat1;
+            let a = Math.pow(Math.sin(dlat/2), 2) + Math.cos(lat1) * Math.cos(lat2) * Math.pow(Math.sin(dlon/2), 2);
+            let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+            return 3961 * c;
+        }
     
     
         function getRandomInclusive() {
@@ -85,9 +95,11 @@
                 probabilities[sortedIndexes[j]] *= 3;
             }
             normalize(probabilities);
+           
 
        
   }
+}
 </script>
 </body>
 </html>
