@@ -41,7 +41,8 @@
             let a = Math.pow(Math.sin(dlat/2), 2) + Math.cos(lat1) * Math.cos(lat2) * Math.pow(Math.sin(dlon/2), 2);
             let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
             return 3961 * c;
-        }function calcTotalDistance(waypoints, individual) {
+        }
+        function calcTotalDistance(waypoints, individual) {
             let totalDistance = 0;
             for (let i = 0; i < individual.length - 1; ++i) {
                 totalDistance += getDistance(waypoints[individual[i]], waypoints[individual[i+1]]);
@@ -111,6 +112,26 @@
                 probabilities[sortedIndexes[j]] *= 3;
             }
             normalize(probabilities);
+            if (i == numIterations) {
+                let solution = population[sortedIndexes[0]];
+                // console.log(solution);
+                let polyPath = [];
+                let count = 0;
+                let waypointElement = null;
+                solution.forEach(waypointIndex => {
+                    waypoint = waypoints[waypointIndex];
+                    waypointElement = document.createElement("li");
+                    waypointElement.append(waypoint.name);
+                    waypointsList.appendChild(waypointElement);
+                    addToPath(polyPath, new google.maps.LatLng(waypoint.lat / 0.0174533, waypoint.lon / 0.0174533), ++count);
+                });
+                if (returnToOrigin) {
+                    addToPath(polyPath, new google.maps.LatLng(waypoints[0].lat / 0.0174533, waypoints[0].lon / 0.0174533), ++count);
+                }
+                poly.setPath(polyPath);
+                poly.setMap(map);
+                break;
+            }
            
 
        
