@@ -132,10 +132,41 @@
                 poly.setMap(map);
                 break;
             }
-           
+            let index1 = 0;
+                let index2 = 0;
+                let random = 0;
+                let currSum = 0;
+                let crossoverIndex = 0;
+                let aGoesFirst = 0;
+                let newPopulation = [];
+                for (let j = 0; j < popSize; ++j) {
+                    currSum = 0;
+                    random = getRandomInclusive();
+                    for (let k = 0; k < popSize; ++k) {
+                        currSum += probabilities[k];
+                        if (currSum >= random) {
+                            index1 = k;
+                            break;
+                        }
+                    }
+                    currSum = 0;
+                    random = getRandomInclusive();
+                    for (let k = 0; k < popSize; ++k) {
+                        currSum += probabilities[k];
+                        if (currSum >= random) {
+                            index2 = k;
+                            break;
+                        }
+                    }
+                    crossoverIndex = getRandomIntInclusive(1, waypoints.length - 2);
+                    aGoesFirst = getRandomIntInclusive(0, 1);
+                    aGoesFirst ? genNewPopulation(newPopulation, crossoverIndex, population[index1], population[index2])
+                        : genNewPopulation(newPopulation, crossoverIndex, population[index2], population[index1]);
+                }
+                population = newPopulation;
 
-       
   }
+  window.initMap = initMap;
 }
 </script>
 </body>
