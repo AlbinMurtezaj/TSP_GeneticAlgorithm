@@ -59,9 +59,8 @@
                 probabilities[index] /= sum;
             });
         }
-    
-    
-        function getRandomInclusive() {
+
+          function getRandomInclusive() {
             return Math.random() == 0 ? 1 : Math.random();
         }
 
@@ -70,6 +69,7 @@
             max = Math.floor(max);
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
+
 
         function genNewPopulation(newPopulation, crossoverIndex, individual1, individual2) {
             let newIndividual = [];
