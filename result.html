@@ -76,10 +76,25 @@
                 );
             }
 
+
+        function normalize(probabilities) {
+            let sum = probabilities.reduce(function(a, b) {
+                return a + b;
+            }, 0);
+            probabilities.forEach((probability, index) => {
+                probabilities[index] /= sum;
+            });
+        }
+
+          function getRandomInclusive() {
+            return Math.random() == 0 ? 1 : Math.random();
+        }
+
             let returnToOrigin = config["returnToOrigin"];
             let popSize = config["popSize"];
             let numIterations = config["numIterations"];
             let mutChance = config["mutChance"];
+
 
             // Fisher-Yates shuffle algorithm
             function shuffle(individual) {
@@ -133,12 +148,16 @@
                 return Math.random() == 0 ? 1 : Math.random();
             }
 
-            function getRandomIntInclusive(min, max) {
+
+        function genNewPopulation(newPopulation, crossoverIndex, individual1, individual2) {
+
+          function getRandomIntInclusive(min, max) {
                 min = Math.ceil(min);
                 max = Math.floor(max);
                 return Math.floor(Math.random() * (max - min + 1)) + min;
             }
 function genNewPopulation(newPopulation, crossoverIndex, individual1, individual2) {
+
             let newIndividual = [];
             ++crossoverIndex;
             for (let i = 0; i < crossoverIndex; ++i) {
