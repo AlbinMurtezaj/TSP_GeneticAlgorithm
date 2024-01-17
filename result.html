@@ -24,14 +24,14 @@
 
 
         function genInitialPopulation(population) {
-            let individual = [];
-            let zero = [0];
-            for (let i = 0; i < popSize; ++i) {
-                individual = [...Array(waypoints.length - 1).keys()].map(j => ++j);
-                shuffle(individual);
-                population.push(zero.concat(individual));
-            }
-        }
+        let individual = [];
+        let zero = [0];
+        for (let i = 0; i < popSize; ++i) {
+        individual = [...Array(waypoints.length - 1).keys()].map(j => ++j);
+        shuffle(individual);
+        population.push(zero.concat(individual));
+      }
+  }
         // Calculate the Haversine distance between two waypoints
         function getDistance(waypoint1, waypoint2) {
             let dlon = waypoint2.lon - waypoint1.lon;
@@ -112,6 +112,7 @@
                 probabilities[sortedIndexes[j]] *= 3;
             }
             normalize(probabilities);
+            
             if (i == numIterations) {
                 let solution = population[sortedIndexes[0]];
                 // console.log(solution);
