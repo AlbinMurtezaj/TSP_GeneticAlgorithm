@@ -4,9 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travel Salesman Problem</title>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
 </head>
 <body>
-    <div id="map" style="height: 650px; width: 100%;"></div>
+    <div class="pac-card" id="pac-card">
+        <div>
+            <div id="title">Autocomplete search</div>
+            <br />
+        </div>
+        <div id="pac-container">
+            <input id="pac-input" type="text" placeholder="Enter a location" />
+        </div>
+    </div>
+
+    <div id="map"></div>
+
+    <!-- Searched data -->
+    <ul id="waypoints-list">
+    </ul>
+    <div id="infowindow-content">
+        <span id="place-name" class="title"></span><br />
+        <span id="place-address"></span>
+    </div>
+
+    <div id="button-div">
+        <button id="goto-result">Calculate Best Route!</button>
+    </div>
 
     <script>
     function loadScript() {
