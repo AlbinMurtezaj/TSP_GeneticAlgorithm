@@ -138,26 +138,25 @@
                 max = Math.floor(max);
                 return Math.floor(Math.random() * (max - min + 1)) + min;
             }
-
-            function genNewPopulation(newPopulation, crossoverIndex, individual1, individual2) {
-                let newIndividual = [];
-                ++crossoverIndex;
-                for (let i = 0; i < crossoverIndex; ++i) {
-                    newIndividual.push(individual1[i]);
-                }
-                for (let i = 0; i < individual2.length; ++i) {
-                    if (!newIndividual.includes(individual2[i])) {
-                        newIndividual.push(individual2[i]);
-                    }
-                }
-                let random = getRandomInclusive();
-                if (random <= mutChance) {
-                    let index1 = getRandomIntInclusive(1, newIndividual.length - 1);
-                    let index2 = getRandomIntInclusive(1, newIndividual.length - 1);
-                    [newIndividual[index1], newIndividual[index2]] = [newIndividual[index2], newIndividual[index1]];
-                }
-                newPopulation.push(newIndividual);
+function genNewPopulation(newPopulation, crossoverIndex, individual1, individual2) {
+            let newIndividual = [];
+            ++crossoverIndex;
+            for (let i = 0; i < crossoverIndex; ++i) {
+                newIndividual.push(individual1[i]);
             }
+            for (let i = 0; i < individual2.length; ++i) {
+                if (!newIndividual.includes(individual2[i])) {
+                    newIndividual.push(individual2[i]);
+                }
+            }
+            let random = getRandomInclusive();
+            if (random <= mutChance) {
+                let index1 = getRandomIntInclusive(1, newIndividual.length - 1);
+                let index2 = getRandomIntInclusive(1, newIndividual.length - 1);
+                [newIndividual[index1], newIndividual[index2]] = [newIndividual[index2], newIndividual[index1]];
+            }
+            newPopulation.push(newIndividual);
+        }
 
             function addToPath(polyPath, latlng, count) {
                 polyPath.push(latlng);
