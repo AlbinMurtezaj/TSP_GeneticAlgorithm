@@ -40,8 +40,9 @@
         document.body.appendChild(script);
     }
 
-    window.initMap = initMap;
-    window.onload = loadScript;
+
+//     window.initMap = initMap;
+//     window.onload = loadScript;
 
     class Waypoint{
             constructor(name, location) {
@@ -171,6 +172,9 @@
             infowindow.open(map, marker);
             });
     }
+      
+       window.initMap = initMap;
+    window.onload = loadScript;
         
     </script>
     <script async defer
