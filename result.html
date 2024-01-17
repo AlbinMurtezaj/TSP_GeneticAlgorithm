@@ -112,6 +112,7 @@
                 probabilities[sortedIndexes[j]] *= 3;
             }
             normalize(probabilities);
+            
             if (i == numIterations) {
                 let solution = population[sortedIndexes[0]];
                 // console.log(solution);
