@@ -33,7 +33,7 @@ The project idea is that you give a number of cities and the distance between ea
      ```
      git clone <repository_url>
      ```
-
+     
 2. **Obtain Google Maps API Key:**
    - Visit the [Google Cloud Console](https://console.cloud.google.com/).
    - Create a project, enable the Google Maps JavaScript API, and generate an API key.
@@ -52,8 +52,8 @@ The project idea is that you give a number of cities and the distance between ea
 4. **Run the Project:**
    - Launch the project by opening `index.html` in a web browser.
 
-## Using the Application
-
+## Using the web from localhost
+- **Steps:**
 1. **Explore the Map:**
    - The `index.html` file will display a map with a search bar at the top left corner.
 
@@ -67,6 +67,10 @@ The project idea is that you give a number of cities and the distance between ea
 
 4. **Start New Calculation:**
    - To select new locations, press "Start New Calculation."
+
+This website is also deployed at: https://albinmurtezaj.github.io/TSP_GeneticAlgorithm/<br/>
+The user manual is the same as from step 2
+
 ### Contributors
 - [Alban Murtezaj](https://github.com/aalbaan)</br>
 - [Albin Murtezaj](https://github.com/AlbinMurtezaj) </br>
