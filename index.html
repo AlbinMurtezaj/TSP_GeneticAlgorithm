@@ -30,8 +30,8 @@
     <div id="button-div">
         <button id="goto-result">Calculate Best Route!</button>
     </div>
-
-    <script>
+    <script src="./config.js"></script>
+    <script defer>
     function loadScript() {
         var script = document.createElement("script");
         script.type = "text/javascript";
@@ -39,10 +39,6 @@
         script.defer = true;
         document.body.appendChild(script);
     }
-
-
-//     window.initMap = initMap;
-//     window.onload = loadScript;
 
     class Waypoint{
             constructor(name, location) {
@@ -113,6 +109,9 @@
 
           
             let waypointElement = document.createElement("li");
+            counter++;
+            localStorage.setItem("counter",counter);
+            console.log(counter);
             waypointElement.append(place.name);
             let deleteButton = document.createElement("button");
             deleteButton.innerHTML = "X";
