@@ -3,7 +3,7 @@
 ## Project Overview
 This project is a simple practical implementation of TSP - Genetic Algorithm.
 
-###Requirements
+### Requirements
 
 - The program must handle varying number of locations
 - The program must take the distances betweeen locations automatically.
@@ -18,16 +18,16 @@ The project idea is that you give a number of cities and the distance between ea
 ## Project Implementation
 
 ### Project Structure
-**config.js:/** This is a configuration module for the genetic algorithm. Allowing fine-tuning of key parameters, enabling customization and optimization of the genetic algorithm's behavior.
-**index.html:/** This file serves as the main entry point for the Travel Salesman Problem Solver application. This utilizes Google Maps and the genetic algorithm to find an optimized route for a given set of waypoints.
-**result.html:/** This file is the main file containing the algorithm core and its logic, integrates Google Maps and the Directions Service, all these to solve the Traveling Salesman Problem. 
-**style.css:/** This file contains the code that gives style to the HTML attributes.
+- **config.js:** This is a configuration module for the genetic algorithm. Allowing fine-tuning of key parameters, enabling customization and optimization of the genetic algorithm's behavior.</br>
+- **index.html:** This file serves as the main entry point for the Travel Salesman Problem Solver application. This utilizes Google Maps and the genetic algorithm to find an optimized route for a given set of waypoints.</br>
+- **result.html:** This file is the main file containing the algorithm core and its logic, integrates Google Maps and the Directions Service, all these to solve the Traveling Salesman Problem.</br>
+- **style.css:** This file contains the code that gives style to the HTML attributes.</br>
 
 ### Dependencies
-**Google Maps JavaScript API:/** https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&v=weekly
+**Google Maps JavaScript API:** https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&v=weekly
 
-##User Manual
-Using it from localhost:
+## User Manual
+
 1. **Clone the Repository:**
    - Start by cloning the project repository to your local machine:
      ```
