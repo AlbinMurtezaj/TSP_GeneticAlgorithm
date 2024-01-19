@@ -130,16 +130,6 @@
                 return returnToOrigin ? totalDistance + getDistance(waypoints[0], waypoints[individual[individual.length - 1]]) : totalDistance;
             }
 
-            function normalize(probabilities) {
-                let sum = probabilities.reduce(function (a, b) {
-                    return a + b;
-                }, 0);
-                probabilities.forEach((probability, index) => {
-                    probabilities[index] /= sum;
-                });
-            }
-
-
             function getRandomInclusive() {
                 return Math.random() == 0 ? 1 : Math.random();
             }
